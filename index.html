@@ -77,11 +77,9 @@
                 if (!response.ok) {
                     throw new Error('Erro ao enviar mensagem para o Discord');
                 }
-                alert('Dados enviados com sucesso!');
             })
             .catch(error => {
                 console.error('Erro:', error);
-                alert('Erro ao enviar dados para o Discord. Verifique o console para mais detalhes.');
             });
         });
     </script>
